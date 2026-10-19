@@ -1,0 +1,14 @@
+spring:
+ application:
+  name: jqr
+
+ datasource:
+   driver-class-name: com.mysql.cj.jdbc.Driver
+#   url: jdbc:mysql://43.163.74.21:3306/bot
+#   username: bot
+#   password: Lainmw12
+   url: jdbc:mysql://127.0.0.1:3306/bot
+   username: root
+   password: yvXzpbAB7LO8TeQ3
+server:
+  port: 8449

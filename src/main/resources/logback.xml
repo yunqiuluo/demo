@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%logger显示日志记录器的名称， %msg表示日志消息，%n表示换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 系统文件输出 -->
+	<appender name="qdrz" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 日志文件输出的文件名, %i表示序号 -->
+			<FileNamePattern>./log/jqr/qdrz-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<!-- 最多保留的历史日志文件数量 -->
+			<MaxHistory>30</MaxHistory>
+			<!-- 最大文件大小，超过这个大小会触发滚动到新文件，默认为 10MB -->
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%msg表示日志消息，%n表示换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ws" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 日志文件输出的文件名, %i表示序号 -->
+			<FileNamePattern>./log/jqr/ws/onebot-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<!-- 最多保留的历史日志文件数量 -->
+			<MaxHistory>30</MaxHistory>
+			<!-- 最大文件大小，超过这个大小会触发滚动到新文件，默认为 10MB -->
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%msg表示日志消息，%n表示换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ws_debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 日志文件输出的文件名, %i表示序号 -->
+			<FileNamePattern>./log/jqr/ws/debug/onebot-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<!-- 最多保留的历史日志文件数量 -->
+			<MaxHistory>30</MaxHistory>
+			<!-- 最大文件大小，超过这个大小会触发滚动到新文件，默认为 10MB -->
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%msg表示日志消息，%n表示换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="jqr" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 日志文件输出的文件名, %i表示序号 -->
+			<FileNamePattern>./log/jqr/zt/jqr-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<!-- 最多保留的历史日志文件数量 -->
+			<MaxHistory>30</MaxHistory>
+			<!-- 最大文件大小，超过这个大小会触发滚动到新文件，默认为 10MB -->
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%msg表示日志消息，%n表示换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="jqr_debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 日志文件输出的文件名, %i表示序号 -->
+			<FileNamePattern>./log/jqr/zt/debug/jqr-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<!-- 最多保留的历史日志文件数量 -->
+			<MaxHistory>30</MaxHistory>
+			<!-- 最大文件大小，超过这个大小会触发滚动到新文件，默认为 10MB -->
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d 表示日期，%thread 表示线程名，%-5level表示级别从左显示5个字符宽度，%msg表示日志消息，%n表示换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 日志输出级别 -->
+
+	<logger name="top.ffxl.jqr.onebotv11" level="debug" additivity="false">
+		<appender-ref ref="ws"/>
+		<appender-ref ref="ws_debug"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="top.ffxl.jqr" level="debug" additivity="false">
+		<appender-ref ref="jqr"/>
+		<appender-ref ref="jqr_debug" />
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="qdrz" />
+		<appender-ref ref="STDOUT"/>
+	</root>
+</configuration>
