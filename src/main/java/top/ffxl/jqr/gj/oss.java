@@ -21,7 +21,7 @@ public class oss {
             .region(Region.US_EAST_1)
             .credentialsProvider(
                     StaticCredentialsProvider.create(
-                            AwsBasicCredentials.create("luo","Lainmw12")
+                            AwsBasicCredentials.create("","")
                     )
             )
             .forcePathStyle(true)
